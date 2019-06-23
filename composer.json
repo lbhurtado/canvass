@@ -1,0 +1,54 @@
+{
+    "name": "lbhurtado/canvass",
+    "description": "This is a helper package for canvassing VTM ballots.",
+    "keywords": [
+        "lbhurtado",
+        "canvass"
+    ],
+    "homepage": "https://github.com/lbhurtado/canvass",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Lester Hurtado",
+            "email": "lester@hurtado.ph",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.8.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LBHurtado\\Canvass\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LBHurtado\\Canvass\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LBHurtado\\Canvass\\CanvassServiceProvider"
+            ],
+            "aliases": {
+                "Canvass": "LBHurtado\\Canvass\\CanvassFacade"
+            }
+        }
+    }
+}
